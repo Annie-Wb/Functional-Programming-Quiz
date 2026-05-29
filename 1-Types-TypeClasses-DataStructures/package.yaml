@@ -1,0 +1,17 @@
+name: types-ttds-exercises
+version: 0.1.0.0
+dependencies:
+  - base >= 4.7 && < 5
+  - QuickCheck
+library:
+  source-dirs: src
+  exposed-modules:
+    - Exercises.TypesTTDS.QuizSkeletons
+tests:
+  Quiz04Test:
+    main: test/Quiz04Test.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+      - types-ttds-exercises
+      - QuickCheck

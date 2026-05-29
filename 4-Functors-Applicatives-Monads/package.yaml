@@ -1,0 +1,24 @@
+name: fam-exercises
+version: 0.1.0.0
+dependencies:
+  - base >= 4.7 && < 5
+  - QuickCheck
+library:
+  source-dirs: src
+  exposed-modules:
+    - Exercises.FAM.FAMExamples
+    - Exercises.FAM.ParserExamples
+tests:
+  FunctorLawsTest:
+    main: test/FunctorLawsTest.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+      - fam-exercises
+      - QuickCheck
+  ParserExample:
+    main: test/ParserExample.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+      - fam-exercises

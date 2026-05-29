@@ -1,0 +1,56 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           fam-exercises
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Exercises.FAM.FAMExamples
+      Exercises.FAM.ParserExamples
+  other-modules:
+      FAMExamples
+      ParserExamples
+      Paths_fam_exercises
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite FunctorLawsTest
+  type: exitcode-stdio-1.0
+  main-is: test/FunctorLawsTest.hs
+  other-modules:
+      FunctorLawsTest
+      ParserExample
+      Paths_fam_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , fam-exercises
+  default-language: Haskell2010
+
+test-suite ParserExample
+  type: exitcode-stdio-1.0
+  main-is: test/ParserExample.hs
+  other-modules:
+      FunctorLawsTest
+      ParserExample
+      Paths_fam_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , fam-exercises
+  default-language: Haskell2010

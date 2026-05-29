@@ -1,0 +1,45 @@
+module Exercises.Memo.MemoizationSkeleton where
+
+-- List-based cache
+listCache :: [a] -> (a -> b) -> [(a,b)]
+listCache = error "implement listCache"
+
+listLookup :: Eq a => [(a,b)] -> a -> b
+listLookup = error "implement listLookup"
+
+-- Naive fibonacci (for correctness checks)
+fibo :: Int -> Int
+fibo 0 = 0
+fibo 1 = 1
+fibo n = fibo (n-1) + fibo (n-2)
+
+-- Open recursion fibonacci
+openFibo :: (Int -> Int) -> Int -> Int
+openFibo = error "implement openFibo"
+
+-- memoizeList helper
+memoizeList :: Eq a => [a] -> (a -> b) -> (a -> b)
+memoizeList domain f = listLookup . listCache domain $ f
+
+-- fastFibo using memoization
+fastFibo :: Int -> Int
+fastFibo = error "implement fastFibo (use memoizeList and openFibo)"
+
+-- Trie type
+data Trie a e = Trie a [(e, Trie a e)] deriving (Eq, Show)
+
+trieLookup :: Eq e => Trie a e -> [e] -> a
+trieLookup = error "implement trieLookup"
+
+mapTrie :: (a -> b) -> Trie a e -> Trie b e
+mapTrie = error "implement mapTrie"
+
+-- Helpers for building/inspecting tries (students implement conceptually)
+rootTrie :: [e] -> Trie a e
+rootTrie = error "implement rootTrie (skeleton)"
+
+limitTrie :: Int -> Trie a e -> Trie a e
+limitTrie = error "implement limitTrie (returns finite view)"
+
+trieCache :: [e] -> ([e] -> a) -> Trie a e
+trieCache = error "implement trieCache"

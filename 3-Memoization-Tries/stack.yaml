@@ -1,0 +1,4 @@
+resolver: lts-20.24
+packages:
+- .
+local-bin-path: ./.stack-work/bin
