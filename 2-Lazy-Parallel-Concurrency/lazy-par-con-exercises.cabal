@@ -35,7 +35,8 @@ test-suite ConcurrencyExample
       test
   ghc-options: -Wall -main-is ConcurrencyExample
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , deepseq
     , lazy-par-con-exercises
     , parallel
@@ -53,7 +54,8 @@ test-suite LazyExample
       test
   ghc-options: -Wall -main-is LazyExample
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , deepseq
     , lazy-par-con-exercises
     , parallel
@@ -71,7 +73,8 @@ test-suite ParallelExample
       test
   ghc-options: -Wall -main-is ParallelExample
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , deepseq
     , lazy-par-con-exercises
     , parallel

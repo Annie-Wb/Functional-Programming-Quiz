@@ -1,0 +1,34 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           introduction-exercises
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Quiz0
+  other-modules:
+      Paths_introduction_exercises
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite CombinedTest
+  type: exitcode-stdio-1.0
+  main-is: Quiz0Test.hs
+  other-modules:
+      Paths_introduction_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , introduction-exercises
+  default-language: Haskell2010

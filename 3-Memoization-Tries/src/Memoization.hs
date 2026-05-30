@@ -2,10 +2,10 @@ module Memoization where
 
 -- List-based cache
 listCache :: [a] -> (a -> b) -> [(a,b)]
-listCache = error "implement"
+listCache = error "implement listCache"
 
 listLookup :: Eq a => [(a,b)] -> a -> b
-listLookup = error "implement"
+listLookup = error "implement listLookup"
 
 -- Naive fibonacci (for correctness checks)
 fibo :: Int -> Int
@@ -15,31 +15,31 @@ fibo n = fibo (n-1) + fibo (n-2)
 
 -- Open recursion fibonacci
 openFibo :: (Int -> Int) -> Int -> Int
-openFibo = error "implement"
+openFibo = error "implement openFibo"
 
 -- memoizeList helper
 memoizeList :: Eq a => [a] -> (a -> b) -> (a -> b)
-memoizeList = error "implement"
+memoizeList = error "implement memoizeList"
 
 -- fastFibo using memoization
 fastFibo :: Int -> Int
-fastFibo = error "implement"
+fastFibo = error "implement fastFibo"
 
 -- Trie type
 data Trie a e = Trie a [(e, Trie a e)] deriving (Eq, Show)
 
 trieLookup :: Eq e => Trie a e -> [e] -> a
-trieLookup = error "implement"
+trieLookup = error "implement trieLookup"
 
 mapTrie :: (a -> b) -> Trie a e -> Trie b e
-mapTrie = error "implement"
+mapTrie = error "implement mapTrie"
 
 -- Helpers for building/inspecting tries
 rootTrie :: [e] -> Trie a e
-rootTrie = error "implement"
+rootTrie = error "implement rootTrie"
 
 limitTrie :: Int -> Trie a e -> Trie a e
-limitTrie = error "implement"
+limitTrie = error "implement limitTrie"
 
 trieCache :: [e] -> ([e] -> a) -> Trie a e
-trieCache = error "implement"
+trieCache = error "implement trieCache"

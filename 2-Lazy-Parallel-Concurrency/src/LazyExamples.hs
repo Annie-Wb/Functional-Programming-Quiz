@@ -3,7 +3,7 @@ module LazyExamples where
 
 -- infinite list of ones
 ones :: [Int]
-ones = error "implement"
+ones = error "implement ones"
 
 -- takeN: take first n elements (student to implement)
 takeN :: Int -> [a] -> [a]
@@ -15,7 +15,7 @@ sumStrict = error "implement sumStrict (use strict accumulator)"
 
 -- naive memoization: build list of fibs (tip: zipWith)
 fibs :: [Integer]
-fibs = error "implement"
+fibs = error "implement fibs"
 
 -- mapLazy: map without using Prelude.map
 mapLazy :: (a -> b) -> [a] -> [b]

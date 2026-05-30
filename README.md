@@ -2,10 +2,13 @@
 
 This repository is a course workspace for **EDAN40: Functional Programming**. It collects exercise sheets, solution hints, and Haskell skeletons covering the main topics from the course:
 
+- What functional programming is, and why it differs from imperative/OOP styles
+- Haskell basics
 - Types, type classes, and data structures
 - Laziness, parallelism, and concurrency
 - Memoization and tries
 - Functors, applicatives, monads, and parsing
+- Reasoning, verification, and theory-oriented bonus material
 - Final exam preparation material
 
 The subfolders are organized by topic and usually contain:

@@ -1,0 +1,18 @@
+name: bonus-content-exercises
+version: 0.1.0.0
+dependencies:
+  - base >= 4.7 && < 5
+library:
+  source-dirs: src
+  exposed-modules:
+    - Quiz01_TypeTheory
+    - Quiz02_SomeTheory
+    - Quiz03_Reactive
+tests:
+  CombinedTest:
+    main: Main.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+      - bonus-content-exercises
+      - QuickCheck

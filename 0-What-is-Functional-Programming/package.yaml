@@ -1,0 +1,16 @@
+name: introduction-exercises
+version: 0.1.0.0
+dependencies:
+  - base >= 4.7 && < 5
+library:
+  source-dirs: src
+  exposed-modules:
+    - Quiz0
+tests:
+  CombinedTest:
+    main: Quiz0Test.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+      - introduction-exercises
+      - QuickCheck

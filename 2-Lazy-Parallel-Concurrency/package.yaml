@@ -18,15 +18,18 @@ tests:
     ghc-options: "-Wall -main-is LazyExample"
     dependencies:
       - lazy-par-con-exercises
+      - QuickCheck
   ParallelExample:
     main: ParallelExample.hs
     source-dirs: test
     ghc-options: "-Wall -main-is ParallelExample"
     dependencies:
       - lazy-par-con-exercises
+      - QuickCheck
   ConcurrencyExample:
     main: ConcurrencyExample.hs
     source-dirs: test
     ghc-options: "-Wall -main-is ConcurrencyExample"
     dependencies:
       - lazy-par-con-exercises
+      - QuickCheck

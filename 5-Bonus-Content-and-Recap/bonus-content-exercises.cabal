@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           bonus-content-exercises
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Quiz01_TypeTheory
+      Quiz02_SomeTheory
+      Quiz03_Reactive
+  other-modules:
+      Paths_bonus_content_exercises
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite CombinedTest
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_bonus_content_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , bonus-content-exercises
+  default-language: Haskell2010
