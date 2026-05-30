@@ -7,7 +7,7 @@ Exercises
 
 2. Function definitions
    - Implement `len :: [a] -> Int` without using `length`.
-   - Implement `safeHead :: [a] -> Maybe a`.
+   - Implement `safeHead :: [a] -> Maybe a`. (Safe `head`)
 
 3. Pattern matching and recursion
    - Implement `sumList :: Num a => [a] -> a` using pattern matching.
@@ -15,6 +15,3 @@ Exercises
 
 4. Polymorphism
    - Implement `pairMap :: (a->b) -> (a,a) -> (b,b)`.
-
-5. Short proofs / reasoning
-   - Explain why `id . id = id` for all types.

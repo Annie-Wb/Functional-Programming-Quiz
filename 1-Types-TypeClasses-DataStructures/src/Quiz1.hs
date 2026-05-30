@@ -1,6 +1,4 @@
-module Exercises.TypesTTDS.QuizSkeletons where
-
--- Simple skeleton functions for students to implement
+module Quiz where
 
 len :: [a] -> Int
 len = error "implement len"
@@ -14,7 +12,7 @@ sumList = error "implement sumList"
 rev :: [a] -> [a]
 rev = error "implement rev"
 
--- Tree skeleton
+
 data Tree a = Leaf | Node a (Tree a) (Tree a) deriving (Eq, Show)
 
 treeSize :: Tree a -> Int

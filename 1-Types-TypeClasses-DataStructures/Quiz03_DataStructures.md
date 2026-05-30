@@ -12,6 +12,3 @@ Exercises
 
 3. Association lists and lookup
    - Implement `lookupAL :: Eq k => k -> [(k,v)] -> Maybe v`.
-
-4. Custom ADT design
-   - Design a small AST for arithmetic expressions and write an evaluator.
