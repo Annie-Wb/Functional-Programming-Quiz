@@ -1,6 +1,8 @@
-module Main where
+module ConcurrencyExample where
 
-import Exercises.LazyParCon.ConcurrencyExamples
+import Control.Concurrent.STM
+
+import ConcurrencyExamples
 
 main :: IO ()
 main = do

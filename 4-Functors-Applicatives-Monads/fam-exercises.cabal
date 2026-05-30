@@ -10,11 +10,9 @@ build-type:     Simple
 
 library
   exposed-modules:
-      Exercises.FAM.FAMExamples
-      Exercises.FAM.ParserExamples
-  other-modules:
       FAMExamples
       ParserExamples
+  other-modules:
       Paths_fam_exercises
   hs-source-dirs:
       src
@@ -25,14 +23,13 @@ library
 
 test-suite FunctorLawsTest
   type: exitcode-stdio-1.0
-  main-is: test/FunctorLawsTest.hs
+  main-is: FunctorLawsTest.hs
   other-modules:
-      FunctorLawsTest
       ParserExample
       Paths_fam_exercises
   hs-source-dirs:
       test
-  ghc-options: -Wall
+  ghc-options: -Wall -main-is FunctorLawsTest
   build-depends:
       QuickCheck
     , base >=4.7 && <5
@@ -41,14 +38,13 @@ test-suite FunctorLawsTest
 
 test-suite ParserExample
   type: exitcode-stdio-1.0
-  main-is: test/ParserExample.hs
+  main-is: ParserExample.hs
   other-modules:
       FunctorLawsTest
-      ParserExample
       Paths_fam_exercises
   hs-source-dirs:
       test
-  ghc-options: -Wall
+  ghc-options: -Wall -main-is ParserExample
   build-depends:
       QuickCheck
     , base >=4.7 && <5

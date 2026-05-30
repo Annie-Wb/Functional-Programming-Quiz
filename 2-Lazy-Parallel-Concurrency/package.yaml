@@ -4,28 +4,29 @@ dependencies:
   - base >= 4.7 && < 5
   - deepseq
   - parallel
+  - stm
 library:
   source-dirs: src
   exposed-modules:
-    - Exercises.LazyParCon.LazyExamples
-    - Exercises.LazyParCon.ParallelExamples
-    - Exercises.LazyParCon.ConcurrencyExamples
+    - LazyExamples
+    - ParallelExamples
+    - ConcurrencyExamples
 tests:
   LazyExample:
-    main: test/LazyExample.hs
+    main: LazyExample.hs
     source-dirs: test
-    ghc-options: -Wall
+    ghc-options: "-Wall -main-is LazyExample"
     dependencies:
       - lazy-par-con-exercises
   ParallelExample:
-    main: test/ParallelExample.hs
+    main: ParallelExample.hs
     source-dirs: test
-    ghc-options: -Wall
+    ghc-options: "-Wall -main-is ParallelExample"
     dependencies:
       - lazy-par-con-exercises
   ConcurrencyExample:
-    main: test/ConcurrencyExample.hs
+    main: ConcurrencyExample.hs
     source-dirs: test
-    ghc-options: -Wall
+    ghc-options: "-Wall -main-is ConcurrencyExample"
     dependencies:
       - lazy-par-con-exercises

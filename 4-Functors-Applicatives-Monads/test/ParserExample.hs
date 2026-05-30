@@ -1,6 +1,7 @@
-module Main where
+module ParserExample where
 
-import Exercises.FAM.ParserExamples
+import ParserExamples
+import Data.Char
 
 main :: IO ()
 main = do

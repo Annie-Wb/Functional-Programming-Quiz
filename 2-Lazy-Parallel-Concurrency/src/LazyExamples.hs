@@ -1,10 +1,9 @@
-module Exercises.LazyParCon.LazyExamples where
+module LazyExamples where
 
--- Examples and skeletons for lazy evaluation exercises
 
 -- infinite list of ones
 ones :: [Int]
-ones = 1 : ones
+ones = error "implement"
 
 -- takeN: take first n elements (student to implement)
 takeN :: Int -> [a] -> [a]
@@ -14,6 +13,14 @@ takeN = error "implement takeN"
 sumStrict :: Num a => [a] -> a
 sumStrict = error "implement sumStrict (use strict accumulator)"
 
--- naive memoization: build list of fibs (example)
+-- naive memoization: build list of fibs (tip: zipWith)
 fibs :: [Integer]
-fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+fibs = error "implement"
+
+-- mapLazy: map without using Prelude.map
+mapLazy :: (a -> b) -> [a] -> [b]
+mapLazy = error "implement mapLazy"
+
+-- prefixSums: running totals, useful for spotting laziness issues
+prefixSums :: Num a => [a] -> [a]
+prefixSums = error "implement prefixSums"

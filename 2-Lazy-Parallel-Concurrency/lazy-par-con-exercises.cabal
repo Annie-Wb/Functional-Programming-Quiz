@@ -1,0 +1,79 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           lazy-par-con-exercises
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      LazyExamples
+      ParallelExamples
+      ConcurrencyExamples
+  other-modules:
+      Paths_lazy_par_con_exercises
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , deepseq
+    , parallel
+    , stm
+  default-language: Haskell2010
+
+test-suite ConcurrencyExample
+  type: exitcode-stdio-1.0
+  main-is: ConcurrencyExample.hs
+  other-modules:
+      LazyExample
+      ParallelExample
+      Paths_lazy_par_con_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -main-is ConcurrencyExample
+  build-depends:
+      base >=4.7 && <5
+    , deepseq
+    , lazy-par-con-exercises
+    , parallel
+    , stm
+  default-language: Haskell2010
+
+test-suite LazyExample
+  type: exitcode-stdio-1.0
+  main-is: LazyExample.hs
+  other-modules:
+      ConcurrencyExample
+      ParallelExample
+      Paths_lazy_par_con_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -main-is LazyExample
+  build-depends:
+      base >=4.7 && <5
+    , deepseq
+    , lazy-par-con-exercises
+    , parallel
+    , stm
+  default-language: Haskell2010
+
+test-suite ParallelExample
+  type: exitcode-stdio-1.0
+  main-is: ParallelExample.hs
+  other-modules:
+      ConcurrencyExample
+      LazyExample
+      Paths_lazy_par_con_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -main-is ParallelExample
+  build-depends:
+      base >=4.7 && <5
+    , deepseq
+    , lazy-par-con-exercises
+    , parallel
+    , stm
+  default-language: Haskell2010

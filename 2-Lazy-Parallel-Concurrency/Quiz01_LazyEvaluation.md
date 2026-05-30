@@ -15,4 +15,8 @@ Exercises
    - Implement `sumStrict :: Num a => [a] -> a` that avoids accumulating thunks.
 
 4. Laziness tricks
-   - Use laziness to memoize a simple function (tabulate a list of results).
+   - Use laziness to memoize fibonacci sequence.
+
+5. More list exercises
+   - Implement `mapLazy :: (a -> b) -> [a] -> [b]` without using `Prelude.map`.
+   - Implement `prefixSums :: Num a => [a] -> [a]` to produce running totals.

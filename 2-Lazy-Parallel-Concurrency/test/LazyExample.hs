@@ -1,7 +1,6 @@
-module Main where
+module LazyExample where
 
-import Exercises.LazyParCon.LazyExamples
-import System.IO
+import LazyExamples
 
 main :: IO ()
 main = do

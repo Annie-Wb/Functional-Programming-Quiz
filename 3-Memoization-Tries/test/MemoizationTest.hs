@@ -1,7 +1,7 @@
 module Main where
 
 import Test.QuickCheck
-import Exercises.Memo.MemoizationSkeleton
+import Memoization
 
 -- QuickCheck property for listCache/listLookup
 prop_listCacheLookup :: [Int] -> Fun Int Int -> Bool

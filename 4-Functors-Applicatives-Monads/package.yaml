@@ -6,19 +6,19 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - Exercises.FAM.FAMExamples
-    - Exercises.FAM.ParserExamples
+    - FAMExamples
+    - ParserExamples
 tests:
   FunctorLawsTest:
-    main: test/FunctorLawsTest.hs
+    main: FunctorLawsTest.hs
     source-dirs: test
-    ghc-options: -Wall
+    ghc-options: "-Wall -main-is FunctorLawsTest"
     dependencies:
       - fam-exercises
       - QuickCheck
   ParserExample:
-    main: test/ParserExample.hs
+    main: ParserExample.hs
     source-dirs: test
-    ghc-options: -Wall
+    ghc-options: "-Wall -main-is ParserExample"
     dependencies:
       - fam-exercises

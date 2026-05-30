@@ -1,6 +1,6 @@
-module Main where
+module ParallelExample where
 
-import Exercises.LazyParCon.ParallelExamples
+import ParallelExamples
 
 main :: IO ()
 main = do

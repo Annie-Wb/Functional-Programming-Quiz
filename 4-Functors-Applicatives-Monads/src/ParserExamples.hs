@@ -1,45 +1,52 @@
-module Exercises.FAM.ParserExamples where
+{-# LANGUAGE InstanceSigs #-}
+
+module ParserExamples where
 
 import Control.Applicative
 import Data.Char
 
--- Simple parsing library (students implement/comprehend)
+-- Simple parsing library
 newtype Parser a = Parser { runParser :: String -> [(a,String)] }
 
 instance Functor Parser where
-  fmap f (Parser p) = Parser $ \s -> [ (f a, s') | (a,s') <- p s ]
+  fmap :: (a -> b) -> Parser a -> Parser b
+  fmap = error "implement"
 
 instance Applicative Parser where
-  pure x = Parser $ \s -> [(x,s)]
+  pure :: a -> Parser a
+  pure = error "implement"
+  (<*>) :: Parser (a -> b) -> Parser a -> Parser b
   (<*>) = apParser
 
 apParser :: Parser (a->b) -> Parser a -> Parser b
-apParser (Parser pf) (Parser pa) = Parser $ \s ->
-  [ (f a, s'') | (f,s') <- pf s, (a,s'') <- pa s' ]
+apParser = error "implement"
 
 instance Alternative Parser where
-  empty = Parser $ \_ -> []
-  (Parser p1) <|> (Parser p2) = Parser $ \s -> p1 s ++ p2 s
+  empty :: Parser a
+  empty = error "implement"
+  (<|>) :: Parser a -> Parser a -> Parser a
+  (<|>) = error "implement"
+
+instance Monad Parser where -- see `pure`
+  return :: a -> Parser a
+  return = error "implement"
+  (>>=) :: Parser a -> (a -> Parser b) -> Parser b
+  (>>=) = error "implement"
 
 item :: Parser Char
-item = Parser $ \s -> case s of
-  (c:cs) -> [(c,cs)]
-  [] -> []
+item = error "implement"
 
 sat :: (Char -> Bool) -> Parser Char
-sat pred = do
-  c <- item
-  if pred c then pure c else empty
+sat = error "implement"
 
 char :: Char -> Parser Char
-char c = sat (== c)
+char = error "implement"
 
 string :: String -> Parser String
-string [] = pure []
-string (c:cs) = (:) <$> char c <*> string cs
+string = error "implement"
 
-many1 :: Parser a -> Parser [a]
-many1 p = (:) <$> p <*> many p
+many1 :: Parser a -> Parser [a] -- see `<$>`
+many1 = error "implement"
 
-sepBy :: Parser a -> Parser sep -> Parser [a]
-sepBy p sep = (:) <$> p <*> many (sep *> p) <|> pure []
+sepBy :: Parser a -> Parser sep -> Parser [a] -- see `<|>`
+sepBy = error "implement"

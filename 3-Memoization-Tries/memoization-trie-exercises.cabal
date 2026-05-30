@@ -1,0 +1,35 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           memoization-trie-exercises
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Memoization
+  other-modules:
+      Paths_memoization_trie_exercises
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite MemoizationTest
+  type: exitcode-stdio-1.0
+  main-is: MemoizationTest.hs
+  other-modules:
+      Paths_memoization_trie_exercises
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , memoization-trie-exercises
+  default-language: Haskell2010

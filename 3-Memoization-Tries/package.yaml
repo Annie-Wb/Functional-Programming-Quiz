@@ -6,10 +6,10 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - Exercises.Memo.MemoizationSkeleton
+    - Memoization
 tests:
   MemoizationTest:
-    main: test/MemoizationTest.hs
+    main: MemoizationTest.hs
     source-dirs: test
     ghc-options: -Wall
     dependencies:

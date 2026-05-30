@@ -1,8 +1,8 @@
-module Main where
+module FunctorLawsTest where
 
 import Test.QuickCheck
 import Control.Applicative
-import Exercises.FAM.FAMExamples
+import FAMExamples
 
 -- Functor laws for Id
 prop_id_law :: Int -> Bool

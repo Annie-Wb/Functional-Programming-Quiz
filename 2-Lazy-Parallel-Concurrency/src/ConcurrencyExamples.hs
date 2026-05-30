@@ -1,4 +1,4 @@
-module Exercises.LazyParCon.ConcurrencyExamples where
+module ConcurrencyExamples where
 
 import Control.Concurrent
 import Control.Concurrent.MVar
@@ -6,22 +6,11 @@ import Control.Concurrent.STM
 
 -- spawn two threads that print alternating messages (example)
 twoThreads :: IO ()
-twoThreads = do
-  m <- newEmptyMVar
-  _ <- forkIO $ producer m
-  _ <- forkIO $ consumer m
-  threadDelay 1000000
-  where
-    producer mv = do
-      putStrLn "producer: putting 42"
-      putMVar mv (42 :: Int)
-    consumer mv = do
-      v <- takeMVar mv
-      putStrLn $ "consumer: got " ++ show (v :: Int)
+twoThreads = error "implement"
 
--- STM counter example
+-- STM (tip: use atomically)
 newCounter :: IO (TVar Int)
-newCounter = atomically $ newTVar 0
+newCounter = error "implement"
 
 incCounter :: TVar Int -> IO ()
-incCounter tv = atomically $ modifyTVar' tv (+1)
+incCounter tv = error "implement"
