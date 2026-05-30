@@ -3,7 +3,7 @@ module Main where
 
 import Test.QuickCheck
 import Data.List (sort)
-import Exercises.TypesTTDS.QuizSkeletons
+import Quiz1
 
 -- Example property: reverse twice is identity
 prop_reverseInv :: [Int] -> Bool

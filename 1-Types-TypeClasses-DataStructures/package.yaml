@@ -6,10 +6,10 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - Exercises.TypesTTDS.QuizSkeletons
+    - Quiz1
 tests:
   Quiz04Test:
-    main: test/Quiz04Test.hs
+    main: Quiz1Test.hs
     source-dirs: test
     ghc-options: -Wall
     dependencies:

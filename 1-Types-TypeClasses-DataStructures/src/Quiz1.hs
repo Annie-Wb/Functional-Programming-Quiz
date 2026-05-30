@@ -1,4 +1,6 @@
-module Quiz where
+module Quiz1 where
+
+-- Test with stack test
 
 len :: [a] -> Int
 len = error "implement len"
@@ -12,6 +14,8 @@ sumList = error "implement sumList"
 rev :: [a] -> [a]
 rev = error "implement rev"
 
+pairMap :: (a->b) -> (a,a) -> (b,b)
+pairMap = error "implement pairMap"
 
 data Tree a = Leaf | Node a (Tree a) (Tree a) deriving (Eq, Show)
 
@@ -23,3 +27,6 @@ treeHeight = error "implement treeHeight"
 
 treeToList :: Tree a -> [a]
 treeToList = error "implement treeToList"
+
+lookupAL :: Eq k => k -> [(k,v)] -> Maybe v
+lookupAL = error "implement lookupAL"
