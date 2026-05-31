@@ -12,20 +12,21 @@ mapList = error "implement mapList"
 sumList :: Num a => [a] -> a
 sumList = error "implement sumList"
 
-incrementAll :: [Int] -> [Int]
+-- make these generic where appropriate
+incrementAll :: Num a => [a] -> [a]
 incrementAll = error "implement incrementAll"
 
-filterEven :: [Int] -> [Int]
+filterEven :: Integral a => [a] -> [a]
 filterEven = error "implement filterEven"
 
-pipeline :: [a -> a] -> a -> a
+pipeline :: [(a -> a)] -> a -> a
 pipeline = error "implement pipeline"
 
-translateLoop :: a
+translateLoop :: [Int] -> Int
 translateLoop = error "translateLoop: not implemented"
 
-higherOrderReplacement :: a
+higherOrderReplacement :: (a -> b) -> [a] -> [b]
 higherOrderReplacement = error "higherOrderReplacement: not implemented"
 
-foldReplacement :: a
+foldReplacement :: (b -> a -> b) -> b -> [a] -> b
 foldReplacement = error "foldReplacement: not implemented"

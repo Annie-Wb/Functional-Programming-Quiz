@@ -6,8 +6,6 @@ import System.Exit (exitFailure)
 import Data.List (sort)
 import Quiz0
 
--- Tests that exercise your implementations in src/QuizAll.hs
-
 prop_mapList_eq_map :: Fun Int Int -> [Int] -> Bool
 prop_mapList_eq_map (Fun _ f) xs = mapList f xs == map f xs
 
@@ -32,6 +30,18 @@ prop_pipeline_eq_compose fs x =
   let funcs = map apply fs
   in pipeline funcs x == composeList funcs x
 
+prop_translateLoop_sum :: [Int] -> Bool
+prop_translateLoop_sum xs = translateLoop xs == sum xs
+
+prop_higherOrderReplacement_eq_map :: Fun Int Int -> [Int] -> Bool
+prop_higherOrderReplacement_eq_map (Fun _ f) xs = higherOrderReplacement f xs == map f xs
+
+prop_foldReplacement_eq_foldl :: Int -> [Int] -> Bool
+prop_foldReplacement_eq_foldl init xs =
+  -- Use a concrete binary operator `(+)` for the property
+  let op = (+)
+  in foldReplacement op init xs == foldl op init xs
+
 main :: IO ()
 main = do
   r1 <- quickCheckResult prop_mapList_eq_map
@@ -48,3 +58,9 @@ main = do
   case r6 of { Success {} -> return (); _ -> exitFailure }
   r7 <- quickCheckResult prop_pipeline_eq_compose
   case r7 of { Success {} -> return (); _ -> exitFailure }
+  r8 <- quickCheckResult prop_translateLoop_sum
+  case r8 of { Success {} -> return (); _ -> exitFailure }
+  r9 <- quickCheckResult prop_higherOrderReplacement_eq_map
+  case r9 of { Success {} -> return (); _ -> exitFailure }
+  r10 <- quickCheckResult prop_foldReplacement_eq_foldl
+  case r10 of { Success {} -> return (); _ -> exitFailure }

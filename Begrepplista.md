@@ -1,0 +1,12 @@
+- **Lambda‑kalkyl**: Abstraktion, applikation och beta‑reduktion som modell för beräkning.
+- **Typsystem**: Statisk typning, polymorfism och algebraiska datatyper.
+- **Högreordningsfunktioner**: Funktioner som tar eller returnerar funktioner (map, filter, foldr).
+- **Typinferens**: Inferera mest generell typ, unifiering och principal types.
+- **Typklasser**: Abstraktion (t.ex. Eq, Ord, Functor, Monad) och de lagar de måste uppfylla.
+- **Functor/Applicative/Monad‑lagar**: Identitets- och kompositionslagar som säkerställer förutsägbart beteende.
+- **Rekursion & fold**: Hur iteration uttrycks med rekursion, foldl/foldr och **ackumulatorer** (tail recursion).
+- **Laziness (Lathet)**: Fördröjd utvärdering, oänliga listor, strictness‑problem och **thunks**.
+- **Memoisering**: Cachningstekniker för att undvika upprepade beräkningar.
+- **Parallellism och konkurrens**: par/pseq, Strategier, STM.
+- **Monadic Parsing, IO**: Utbygga parsning med Applicative/Monad, hantera sidoeffekter. 
+- **Property Testing**: Funktioner som testar egenskaper, Quickcheck.
