@@ -2,16 +2,11 @@
 module Main where
 
 import Test.QuickCheck
+import System.Exit (exitFailure)
 import Data.List (sort)
 import Quiz1
 
--- Example property: reverse twice is identity
-prop_reverseInv :: [Int] -> Bool
-prop_reverseInv xs = reverse (reverse xs) == (xs :: [Int])
-
--- reverse distributes over (++)
-prop_reverseAppend :: [Int] -> [Int] -> Bool
-prop_reverseAppend xs ys = reverse (xs ++ ys) == reverse ys ++ reverse xs
+-- (removed trivial reverse properties)
 
 prop_len :: [Int] -> Bool
 prop_len xs = len xs == length xs
@@ -59,20 +54,96 @@ prop_sortIsSorted xs = isSorted (sort xs)
         isSorted [_] = True
         isSorted (a:b:rest) = a <= b && isSorted (b:rest)
 
+prop_len_io :: IO Bool
+prop_len_io = do
+  r <- quickCheckResult prop_len
+  return (isSuccess r)
+
+prop_safeHeadEmpty_io :: IO Bool
+prop_safeHeadEmpty_io = do
+  r <- quickCheckResult prop_safeHeadEmpty
+  return (isSuccess r)
+
+prop_safeHeadCons_io :: IO Bool
+prop_safeHeadCons_io = do
+  r <- quickCheckResult prop_safeHeadCons
+  return (isSuccess r)
+
+prop_sumList_io :: IO Bool
+prop_sumList_io = do
+  r <- quickCheckResult prop_sumList
+  return (isSuccess r)
+
+prop_rev_io :: IO Bool
+prop_rev_io = do
+  r <- quickCheckResult prop_rev
+  return (isSuccess r)
+
+prop_pairMapId_io :: IO Bool
+prop_pairMapId_io = do
+  r <- quickCheckResult prop_pairMapId
+  return (isSuccess r)
+
+prop_pairMapAdd1_io :: IO Bool
+prop_pairMapAdd1_io = do
+  r <- quickCheckResult prop_pairMapAdd1
+  return (isSuccess r)
+
+prop_treeSize_io :: IO Bool
+prop_treeSize_io = do
+  r <- quickCheckResult prop_treeSize
+  return (isSuccess r)
+
+prop_treeHeight_io :: IO Bool
+prop_treeHeight_io = do
+  r <- quickCheckResult prop_treeHeight
+  return (isSuccess r)
+
+prop_treeToList_io :: IO Bool
+prop_treeToList_io = do
+  r <- quickCheckResult prop_treeToList
+  return (isSuccess r)
+
+prop_lookupALFound_io :: IO Bool
+prop_lookupALFound_io = do
+  r <- quickCheckResult prop_lookupALFound
+  return (isSuccess r)
+
+prop_lookupALMissing_io :: IO Bool
+prop_lookupALMissing_io = do
+  r <- quickCheckResult prop_lookupALMissing
+  return (isSuccess r)
+
+prop_sortIsSorted_io :: IO Bool
+prop_sortIsSorted_io = do
+  r <- quickCheckResult prop_sortIsSorted
+  return (isSuccess r)
+
 main :: IO ()
 main = do
-  quickCheck prop_reverseInv
-  quickCheck prop_reverseAppend
-  quickCheck prop_len
-  quickCheck prop_safeHeadEmpty
-  quickCheck prop_safeHeadCons
-  quickCheck prop_sumList
-  quickCheck prop_rev
-  quickCheck prop_pairMapId
-  quickCheck prop_pairMapAdd1
-  quickCheck prop_treeSize
-  quickCheck prop_treeHeight
-  quickCheck prop_treeToList
-  quickCheck prop_lookupALFound
-  quickCheck prop_lookupALMissing
-  quickCheck prop_sortIsSorted
+  r1 <- prop_len_io
+  if not r1 then exitFailure else putStrLn "len OK"
+  r2 <- prop_safeHeadEmpty_io
+  if not r2 then exitFailure else putStrLn "safeHeadEmpty OK"
+  r3 <- prop_safeHeadCons_io
+  if not r3 then exitFailure else putStrLn "safeHeadCons OK"
+  r4 <- prop_sumList_io
+  if not r4 then exitFailure else putStrLn "sumList OK"
+  r5 <- prop_rev_io
+  if not r5 then exitFailure else putStrLn "rev OK"
+  r6 <- prop_pairMapId_io
+  if not r6 then exitFailure else putStrLn "pairMapId OK"
+  r7 <- prop_pairMapAdd1_io
+  if not r7 then exitFailure else putStrLn "pairMapAdd1 OK"
+  r8 <- prop_treeSize_io
+  if not r8 then exitFailure else putStrLn "treeSize OK"
+  r9 <- prop_treeHeight_io
+  if not r9 then exitFailure else putStrLn "treeHeight OK"
+  r10 <- prop_treeToList_io
+  if not r10 then exitFailure else putStrLn "treeToList OK"
+  r11 <- prop_lookupALFound_io
+  if not r11 then exitFailure else putStrLn "lookupALFound OK"
+  r12 <- prop_lookupALMissing_io
+  if not r12 then exitFailure else putStrLn "lookupALMissing OK"
+  r13 <- prop_sortIsSorted_io
+  if not r13 then exitFailure else putStrLn "sortIsSorted OK"

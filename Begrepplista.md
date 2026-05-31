@@ -1,6 +1,7 @@
+- **Rena Funktioner**: Sidoeffektfrihet (`pure`) 
 - **Lambda‑kalkyl**: Abstraktion, applikation och beta‑reduktion som modell för beräkning.
-- **Typsystem**: Statisk typning, polymorfism och algebraiska datatyper.
-- **Högreordningsfunktioner**: Funktioner som tar eller returnerar funktioner (map, filter, foldr).
+- **Typsystem**: Statisk typning, polymorfism och algebraiska datatyper, **mönstermatchning**.
+- **Högreordningsfunktioner**: Funktioner som tar eller returnerar funktioner (`map`, `filter`, `foldr`).
 - **Typinferens**: Inferera mest generell typ, unifiering och principal types.
 - **Typklasser**: Abstraktion (t.ex. Eq, Ord, Functor, Monad) och de lagar de måste uppfylla.
 - **Functor/Applicative/Monad‑lagar**: Identitets- och kompositionslagar som säkerställer förutsägbart beteende.
