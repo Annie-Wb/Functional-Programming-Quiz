@@ -3,7 +3,6 @@ module Main where
 import Test.QuickCheck
 import Test.QuickCheck.Function
 import System.Exit (exitFailure)
-import Data.List (sort)
 import Quiz0
 
 prop_mapList_eq_map :: Fun Int Int -> [Int] -> Bool
@@ -16,7 +15,7 @@ prop_applyTwice :: Fun Int Int -> Int -> Bool
 prop_applyTwice (Fun _ f) x = applyTwice f x == f (f x)
 
 prop_compose_two :: Fun Int Int -> Fun Int Int -> Int -> Bool
-prop_compose_two (Fun _ f) (Fun _ g) x = composeList [f,g] x == (f . g) x
+prop_compose_two (Fun _ f) (Fun _ g) x = composeTwo [f,g] x == (f . g) x
 
 prop_incrementAll :: [Int] -> Bool
 prop_incrementAll xs = incrementAll xs == map (+1) xs
@@ -28,7 +27,7 @@ prop_filterEven xs = filterEven xs == filter even xs
 prop_pipeline_eq_compose :: [Fun Int Int] -> Int -> Bool
 prop_pipeline_eq_compose fs x =
   let funcs = map apply fs
-  in pipeline funcs x == composeList funcs x
+  in pipeline funcs x == composeTwo funcs x
 
 prop_translateLoop_sum :: [Int] -> Bool
 prop_translateLoop_sum xs = translateLoop xs == sum xs
@@ -37,30 +36,28 @@ prop_higherOrderReplacement_eq_map :: Fun Int Int -> [Int] -> Bool
 prop_higherOrderReplacement_eq_map (Fun _ f) xs = higherOrderReplacement f xs == map f xs
 
 prop_foldReplacement_eq_foldl :: Int -> [Int] -> Bool
-prop_foldReplacement_eq_foldl init xs =
+prop_foldReplacement_eq_foldl inits xs =
   -- Use a concrete binary operator `(+)` for the property
   let op = (+)
-  in foldReplacement op init xs == foldl op init xs
+  in foldReplacement op inits xs == foldl op inits xs
 
 main :: IO ()
 main = do
-  r1 <- quickCheckResult prop_mapList_eq_map
-  case r1 of { Success {} -> return (); _ -> exitFailure }
-  r2 <- quickCheckResult prop_sumList_eq_sum
-  case r2 of { Success {} -> return (); _ -> exitFailure }
   r3 <- quickCheckResult prop_applyTwice
   case r3 of { Success {} -> return (); _ -> exitFailure }
   r4 <- quickCheckResult prop_compose_two
   case r4 of { Success {} -> return (); _ -> exitFailure }
+  r1 <- quickCheckResult prop_mapList_eq_map
+  case r1 of { Success {} -> return (); _ -> exitFailure }
+  r2 <- quickCheckResult prop_sumList_eq_sum
+  case r2 of { Success {} -> return (); _ -> exitFailure }
   r5 <- quickCheckResult prop_incrementAll
   case r5 of { Success {} -> return (); _ -> exitFailure }
   r6 <- quickCheckResult prop_filterEven
   case r6 of { Success {} -> return (); _ -> exitFailure }
   r7 <- quickCheckResult prop_pipeline_eq_compose
   case r7 of { Success {} -> return (); _ -> exitFailure }
-  r8 <- quickCheckResult prop_translateLoop_sum
+  r8 <- quickCheckResult prop_higherOrderReplacement_eq_map
   case r8 of { Success {} -> return (); _ -> exitFailure }
-  r9 <- quickCheckResult prop_higherOrderReplacement_eq_map
+  r9 <- quickCheckResult prop_foldReplacement_eq_foldl
   case r9 of { Success {} -> return (); _ -> exitFailure }
-  r10 <- quickCheckResult prop_foldReplacement_eq_foldl
-  case r10 of { Success {} -> return (); _ -> exitFailure }

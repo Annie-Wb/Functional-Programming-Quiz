@@ -1,9 +1,8 @@
-module LazyExample where
+module LazyTest where
 
 import Test.QuickCheck
-import Test.QuickCheck.Function
 import Control.Monad (forM_)
-import LazyExamples
+import Lazy
 import System.Exit (exitFailure)
 
 prop_ones_repeat :: Bool
@@ -19,7 +18,7 @@ prop_mapLazy_eq_map :: Fun Int Int -> [Int] -> Bool
 prop_mapLazy_eq_map (Fun _ f) xs = mapLazy f xs == map f xs
 
 prop_prefixSums :: [Int] -> Bool
-prop_prefixSums xs = prefixSums xs == (if null xs then [] else tail $ scanl (+) 0 xs)
+prop_prefixSums xs = prefixSums xs == (if null xs then [] else (drop 1) $ scanl (+) 0 xs)
 
 prop_sumStrict :: [Int] -> Bool
 prop_sumStrict xs = sumStrict xs == sum xs

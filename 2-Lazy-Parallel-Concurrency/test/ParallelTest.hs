@@ -1,7 +1,7 @@
-module ParallelExample where
+module ParallelTest where
 
 import Test.QuickCheck
-import ParallelExamples
+import Parallel
 import System.Exit (exitFailure)
 
 prop_parallelPairSum :: [Int] -> [Int] -> Bool

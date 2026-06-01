@@ -1,10 +1,9 @@
-module ConcurrencyExample where
+module ConcurrencyTest where
 
 import Control.Exception (catch, SomeException)
 import System.Exit (exitFailure)
 import Control.Concurrent.STM
-import Test.QuickCheck
-import ConcurrencyExamples
+import Concurrency
 
 failOnException :: String -> IO a -> IO a
 failOnException label action = catch action handler

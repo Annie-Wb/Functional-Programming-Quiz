@@ -1,4 +1,4 @@
-module ConcurrencyExamples where
+module Concurrency where
 
 import Control.Concurrent
 import Control.Concurrent.MVar

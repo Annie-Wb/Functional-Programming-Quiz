@@ -1,4 +1,4 @@
-module ParallelExamples where
+module Parallel where
 
 import Control.Parallel (par, pseq)
 import Control.Parallel.Strategies (rpar, rseq, runEval, parList, rdeepseq, using)

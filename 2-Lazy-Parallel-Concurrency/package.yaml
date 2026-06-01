@@ -8,28 +8,28 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - LazyExamples
-    - ParallelExamples
-    - ConcurrencyExamples
+    - Lazy
+    - Parallel
+    - Concurrency
 tests:
-  LazyExample:
-    main: LazyExample.hs
+  LazyTest:
+    main: LazyTest.hs
     source-dirs: test
-    ghc-options: "-Wall -main-is LazyExample"
+    ghc-options: "-Wall -main-is LazyTest"
     dependencies:
       - lazy-par-con-exercises
       - QuickCheck
-  ParallelExample:
-    main: ParallelExample.hs
+  ParallelTest:
+    main: ParallelTest.hs
     source-dirs: test
-    ghc-options: "-Wall -main-is ParallelExample"
+    ghc-options: "-Wall -main-is ParallelTest"
     dependencies:
       - lazy-par-con-exercises
       - QuickCheck
-  ConcurrencyExample:
-    main: ConcurrencyExample.hs
+  ConcurrencyTest:
+    main: ConcurrencyTest.hs
     source-dirs: test
-    ghc-options: "-Wall -main-is ConcurrencyExample"
+    ghc-options: "-Wall -main-is ConcurrencyTest"
     dependencies:
       - lazy-par-con-exercises
       - QuickCheck

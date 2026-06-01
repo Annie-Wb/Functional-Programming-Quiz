@@ -10,9 +10,9 @@ build-type:     Simple
 
 library
   exposed-modules:
-      LazyExamples
-      ParallelExamples
-      ConcurrencyExamples
+      Lazy
+      Parallel
+      Concurrency
   other-modules:
       Paths_lazy_par_con_exercises
   hs-source-dirs:
@@ -24,16 +24,16 @@ library
     , stm
   default-language: Haskell2010
 
-test-suite ConcurrencyExample
+test-suite ConcurrencyTest
   type: exitcode-stdio-1.0
-  main-is: ConcurrencyExample.hs
+  main-is: ConcurrencyTest.hs
   other-modules:
-      LazyExample
-      ParallelExample
+      LazyTest
+      ParallelTest
       Paths_lazy_par_con_exercises
   hs-source-dirs:
       test
-  ghc-options: -Wall -main-is ConcurrencyExample
+  ghc-options: -Wall -main-is ConcurrencyTest
   build-depends:
       QuickCheck
     , base >=4.7 && <5
@@ -43,16 +43,16 @@ test-suite ConcurrencyExample
     , stm
   default-language: Haskell2010
 
-test-suite LazyExample
+test-suite LazyTest
   type: exitcode-stdio-1.0
-  main-is: LazyExample.hs
+  main-is: LazyTest.hs
   other-modules:
-      ConcurrencyExample
-      ParallelExample
+      ConcurrencyTest
+      ParallelTest
       Paths_lazy_par_con_exercises
   hs-source-dirs:
       test
-  ghc-options: -Wall -main-is LazyExample
+  ghc-options: -Wall -main-is LazyTest
   build-depends:
       QuickCheck
     , base >=4.7 && <5
@@ -62,16 +62,16 @@ test-suite LazyExample
     , stm
   default-language: Haskell2010
 
-test-suite ParallelExample
+test-suite ParallelTest
   type: exitcode-stdio-1.0
-  main-is: ParallelExample.hs
+  main-is: ParallelTest.hs
   other-modules:
-      ConcurrencyExample
-      LazyExample
+      ConcurrencyTest
+      LazyTest
       Paths_lazy_par_con_exercises
   hs-source-dirs:
       test
-  ghc-options: -Wall -main-is ParallelExample
+  ghc-options: -Wall -main-is ParallelTest
   build-depends:
       QuickCheck
     , base >=4.7 && <5

@@ -1,4 +1,4 @@
-module LazyExamples where
+module Lazy where
 
 
 -- infinite list of ones

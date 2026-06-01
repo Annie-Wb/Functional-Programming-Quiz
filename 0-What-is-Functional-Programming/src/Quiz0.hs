@@ -3,8 +3,9 @@ module Quiz0 where
 applyTwice :: (a -> a) -> a -> a
 applyTwice = error "implement applyTwice"
 
-composeList :: [(a -> a)] -> a -> a
-composeList = error "implement composeList"
+-- composes two functions
+composeTwo :: [(a -> a)] -> a -> a
+composeTwo = error "implement composeList"
 
 mapList :: (a -> b) -> [a] -> [b]
 mapList = error "implement mapList"
@@ -21,9 +22,6 @@ filterEven = error "implement filterEven"
 
 pipeline :: [(a -> a)] -> a -> a
 pipeline = error "implement pipeline"
-
-translateLoop :: [Int] -> Int
-translateLoop = error "translateLoop: not implemented"
 
 higherOrderReplacement :: (a -> b) -> [a] -> [b]
 higherOrderReplacement = error "higherOrderReplacement: not implemented"
